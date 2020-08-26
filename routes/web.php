@@ -13,17 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/roles', 'PermissionController@Permission');
 
 Route::group(['middleware' => 'role:admin'], function(){
-    Route::get('/admin', function(){
-        return 'Welcome Admin';
-    });
+    Route::get('/dashboard', 'HomeController@index');
+
+    Route::resource('/category', 'CategoryController');
+    Route::resource('/supply', 'SupplierController');
+    Route::resource('/product', 'ProductController');
+
 });

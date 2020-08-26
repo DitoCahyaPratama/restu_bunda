@@ -23,7 +23,8 @@ class CreateUsersRolesTable extends Migration
 
          //SETTING THE PRIMARY KEYS
             $table->primary(['user_id','role_id']);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

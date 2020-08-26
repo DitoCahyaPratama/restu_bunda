@@ -38,16 +38,16 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
                                             <input class="form-check-input" type="checkbox" name="remember"
                                                 id="remember"
                                                 {{ old('remember') ? 'checked' : '' }}>
                                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <button type="submit" class="btn btn-primary btn-user btn-block">
-                                        Login
+                                        login
                                     </button>
                                 </form>
                                 <hr>
